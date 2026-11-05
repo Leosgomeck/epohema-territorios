@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epohéma | Daisy Tupinambá</title>
+  <title>Epohéma Territórios | Daisy Kosttà Tupinambá</title>
   <meta name="description" content="Epohéma Territórios — exposição de arte indígena contemporânea de Daisy Kosttà Tupinambá. Ancestralidade, memória, resistência e renascimento.">
+  <meta property="og:title" content="Epohéma Territórios | Daisy Kosttà Tupinambá">
+  <meta property="og:description" content="Ancestralidade, memória, resistência e renascimento. Exposição de arte indígena contemporânea.">
+  <meta property="og:image" content="imagens/logo-epohema-territorios.png">
+  <link rel="icon" href="imagens/marca-arco.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,13 +20,16 @@
       theme: {
         extend: {
           colors: {
-            noite: '#0b0c10',
-            carvao: '#121413',
-            mata: '#1F3B2D',
-            ocre: '#C9A24B',
-            terra: '#C4572E',
+            noite: '#0c0b0a',
+            carvao: '#161412',
+            urucum: '#D9372B',
+            laranja: '#EE7A1B',
+            ouro: '#E7B53A',
+            mata: '#1F7A4A',
+            azul: '#2456D6',
+            rosa: '#E9587F',
+            osso: '#F4ECDD',
             juta: '#CDBB98',
-            osso: '#EDE6D8',
           },
           fontFamily: {
             display: ['"Cormorant Garamond"', 'serif'],
@@ -35,46 +42,44 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #0b0c10; color: #EDE6D8; -webkit-font-smoothing: antialiased; }
+    body { background: #0c0b0a; color: #F4ECDD; -webkit-font-smoothing: antialiased; }
 
-    /* Grafismo geométrico inspirado em padrões de pintura corporal e cestaria */
+    /* Grafismo: losangos da faixa inferior da estampa (cestaria) */
     .grafismo {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 L10 0 L20 10 L30 0 L40 10' fill='none' stroke='%23C9A24B' stroke-opacity='0.13' stroke-width='1'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath d='M14 2 L26 14 L14 26 L2 14 Z M14 9 L19 14 L14 19 L9 14 Z' fill='none' stroke='%23E7B53A' stroke-opacity='0.16' stroke-width='1'/%3E%3C/svg%3E");
+    }
+
+    /* Faixa de losangos em cores da estampa */
+    .faixa {
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18'%3E%3Cpath d='M18 1 L34 9 L18 17 L2 9 Z' fill='none' stroke='%23D9372B' stroke-width='1.6'/%3E%3Cpath d='M18 6 L23 9 L18 12 L13 9 Z' fill='%23E7B53A'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-size: 36px 18px;
+    }
+
+    /* Glow atrás do emblema */
+    .glow {
+      background: radial-gradient(circle at 50% 45%, rgba(217,55,43,0.28), rgba(238,122,27,0.12) 35%, transparent 65%);
     }
 
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
     .reveal.is-visible { opacity: 1; transform: none; }
 
-    .cursor-dot {
-      position: fixed; top: 0; left: 0; width: 8px; height: 8px; border-radius: 9999px;
-      background: #C4572E; pointer-events: none; z-index: 100; transform: translate(-50%, -50%);
-      transition: width .2s, height .2s, background .2s; mix-blend-mode: difference;
-    }
-    .cursor-dot.is-hover { width: 36px; height: 36px; background: #C9A24B; }
-    @media (hover: none) { .cursor-dot { display: none; } }
-
-    .overlay-hero {
-      background:
-        radial-gradient(ellipse at 70% 40%, rgba(11,12,16,0.15) 0%, rgba(11,12,16,0.85) 70%),
-        linear-gradient(180deg, rgba(11,12,16,0.55) 0%, #0b0c10 100%);
-    }
-
-    .glass { background: rgba(18,20,19,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-
-    .placeholder-img {
-      background:
-        radial-gradient(circle at 50% 40%, rgba(201,162,75,0.18), transparent 60%),
-        linear-gradient(160deg, #1F3B2D 0%, #121413 60%, #0b0c10 100%);
-    }
+    .glass { background: rgba(22,20,18,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 
     .field {
       width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(205,187,152,0.3);
-      padding: 0.75rem 0; color: #EDE6D8; outline: none; transition: border-color .3s;
+      padding: 0.75rem 0; color: #F4ECDD; outline: none; transition: border-color .3s;
     }
-    .field::placeholder { color: rgba(237,230,216,0.35); }
-    .field:focus { border-color: #C9A24B; }
-    select.field option { background: #121413; color: #EDE6D8; }
+    .field::placeholder { color: rgba(244,236,221,0.35); }
+    .field:focus { border-color: #E7B53A; }
+    select.field option { background: #161412; color: #F4ECDD; }
     .label { font-size: 0.7rem; letter-spacing: .18em; text-transform: uppercase; color: #CDBB98; }
+
+    .fio {
+      background: linear-gradient(90deg, #D9372B, #EE7A1B, #E7B53A, #1F7A4A, #2456D6, #E9587F);
+      height: 3px;
+    }
   </style>
 </head>
 
@@ -83,22 +88,25 @@
   <!-- ============ HEADER ============ -->
   <header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
     <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-      <a href="#top" class="flex flex-col leading-none group">
-        <span class="font-display text-2xl tracking-[0.2em] text-osso group-hover:text-ocre transition">EPOHÉMA</span>
-        <span class="text-[0.6rem] tracking-[0.35em] uppercase text-juta mt-1">Daisy Tupinambá</span>
+      <a href="#top" class="flex items-center gap-3 group">
+        <img src="imagens/marca-arco.png" alt="" class="h-9 w-auto" aria-hidden="true">
+        <span class="flex flex-col leading-none">
+          <span class="font-display text-2xl font-bold tracking-[0.18em] text-osso group-hover:text-ouro transition">EPOHÉMA</span>
+          <span class="text-[0.6rem] tracking-[0.35em] uppercase text-juta mt-1">Daisy Tupinambá</span>
+        </span>
       </a>
 
-      <ul class="hidden lg:flex items-center gap-8 text-[0.8rem] tracking-[0.15em] uppercase">
-        <li><a href="#sobre" class="hover:text-ocre transition">Sobre</a></li>
-        <li><a href="#galeria" class="hover:text-ocre transition">Galeria</a></li>
-        <li><a href="#roteiro" class="hover:text-ocre transition">Roteiro</a></li>
-        <li><a href="#imprensa" class="hover:text-ocre transition">Imprensa</a></li>
-        <li><a href="#apoie" class="hover:text-ocre transition">Apoie</a></li>
-        <li><a href="#contrate" class="hover:text-ocre transition">Contrate a Exposição</a></li>
+      <ul class="hidden lg:flex items-center gap-8 text-[0.78rem] tracking-[0.15em] uppercase">
+        <li><a href="#sobre" class="hover:text-ouro transition">Sobre</a></li>
+        <li><a href="#galeria" class="hover:text-ouro transition">Galeria</a></li>
+        <li><a href="#roteiro" class="hover:text-ouro transition">Roteiro</a></li>
+        <li><a href="#imprensa" class="hover:text-ouro transition">Imprensa</a></li>
+        <li><a href="#apoie" class="hover:text-ouro transition">Apoie</a></li>
+        <li><a href="#contrate" class="hover:text-ouro transition">Contrate a Exposição</a></li>
       </ul>
 
       <div class="flex items-center gap-4">
-        <a href="#contrate" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-mata text-osso text-xs tracking-[0.15em] uppercase border border-ocre/30 hover:bg-terra hover:border-terra transition">
+        <a href="#contrate" class="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-urucum text-osso text-xs tracking-[0.15em] uppercase hover:bg-laranja hover:text-noite transition">
           Receber Exposição
         </a>
         <button id="menuBtn" aria-label="Abrir menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
@@ -108,7 +116,6 @@
       </div>
     </nav>
 
-    <!-- Menu mobile -->
     <div id="mobileMenu" class="lg:hidden hidden glass border-t border-white/5">
       <ul class="flex flex-col px-6 py-6 gap-5 text-sm tracking-[0.15em] uppercase">
         <li><a href="#sobre" class="mobile-link block">Sobre</a></li>
@@ -116,80 +123,95 @@
         <li><a href="#roteiro" class="mobile-link block">Roteiro</a></li>
         <li><a href="#imprensa" class="mobile-link block">Imprensa</a></li>
         <li><a href="#apoie" class="mobile-link block">Apoie</a></li>
-        <li><a href="#contrate" class="mobile-link block text-ocre">Contrate a Exposição</a></li>
+        <li><a href="#contrate" class="mobile-link block text-ouro">Contrate a Exposição</a></li>
       </ul>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="top" class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Imagem de destaque (substituir pelo src da obra/foto principal) -->
-    <div class="absolute inset-0">
-      <div class="placeholder-img absolute inset-0"></div>
-      <div class="absolute inset-0 grafismo opacity-60"></div>
-      <div class="absolute inset-0 overlay-hero"></div>
-    </div>
+  <section id="top" class="relative overflow-hidden min-h-screen flex items-center">
+    <div class="absolute inset-0 grafismo"></div>
+    <div class="absolute inset-0 glow"></div>
 
-    <!-- Arco de penas gerado por JS -->
-    <svg id="cocar" class="absolute right-[-10%] lg:right-[2%] top-1/2 -translate-y-1/2 w-[120%] lg:w-[48%] opacity-30 pointer-events-none" viewBox="0 0 400 400" aria-hidden="true"></svg>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 w-full">
-      <div class="max-w-3xl">
-        <p class="reveal label mb-6 text-ocre">Exposição de arte indígena contemporânea</p>
-        <h1 class="reveal font-display text-[5.5rem] sm:text-[8rem] lg:text-[10rem] leading-[0.85] tracking-tight text-osso">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-36 pb-24 w-full grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="reveal label text-ouro mb-6">Exposição de arte indígena contemporânea</p>
+        <h1 class="reveal font-display font-bold text-[5rem] sm:text-[7.5rem] lg:text-[9rem] leading-[0.85] tracking-tight text-osso">
           Epohéma
         </h1>
+        <p class="reveal font-display italic text-3xl sm:text-4xl text-laranja mt-3">Territórios</p>
+
         <p class="reveal mt-8 text-lg md:text-xl leading-relaxed text-osso/80 max-w-xl font-light">
           Ancestralidade traduzida em linguagem contemporânea. Uma obra que atravessa território, memória e renascimento para afirmar a presença dos povos originários.
         </p>
 
-        <div class="reveal mt-12 flex flex-wrap gap-4">
-          <a href="#galeria" class="px-8 py-4 rounded-full bg-terra text-osso text-xs tracking-[0.2em] uppercase hover:bg-ocre hover:text-noite transition duration-500">Explorar Obra</a>
-          <a href="#roteiro" class="px-8 py-4 rounded-full border border-osso/40 text-osso text-xs tracking-[0.2em] uppercase hover:border-ocre hover:text-ocre transition duration-500">Ver Roteiro</a>
+        <div class="reveal mt-10 flex flex-wrap gap-4">
+          <a href="#galeria" class="px-8 py-4 rounded-full bg-urucum text-osso text-xs tracking-[0.2em] uppercase hover:bg-ouro hover:text-noite transition duration-500">Explorar Obra</a>
+          <a href="#roteiro" class="px-8 py-4 rounded-full border border-osso/40 text-osso text-xs tracking-[0.2em] uppercase hover:border-ouro hover:text-ouro transition duration-500">Ver Roteiro</a>
         </div>
+      </div>
+
+      <div class="reveal lg:col-span-5 flex justify-center">
+        <img src="imagens/logo-epohema-territorios.png" alt="Logomarca Epohéma Territórios: arco de penas, cestaria e flores, com a frase Nós resistiremos até que verdadeiramente sejamos lembrados" class="w-full max-w-[520px] drop-shadow-[0_20px_60px_rgba(217,55,43,0.25)]">
       </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-juta/70">
-      <span class="text-[0.6rem] tracking-[0.35em] uppercase">Role</span>
-      <span class="w-px h-12 bg-gradient-to-b from-juta/70 to-transparent"></span>
+    <div class="absolute bottom-0 inset-x-0">
+      <div class="faixa"></div>
+      <div class="bg-carvao/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-wrap justify-center gap-x-8 gap-y-2 text-[0.65rem] tracking-[0.3em] uppercase text-juta">
+          <span>Ancestralidade</span><span class="text-urucum">•</span>
+          <span>Memória</span><span class="text-urucum">•</span>
+          <span>Resistência</span><span class="text-urucum">•</span>
+          <span>Renascimento</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ SOBRE ============ -->
-  <section id="sobre" class="relative py-32 lg:py-44 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
-      <div class="reveal lg:col-span-4">
-        <p class="label text-ocre mb-4">01 — Sobre a artista</p>
-        <h2 class="font-display text-5xl lg:text-6xl leading-[1.05] text-osso">Daisy<br><span class="italic font-light">Kosttà</span> Tupinambá</h2>
-      </div>
+  <section id="sobre" class="relative py-32 lg:py-44">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16 items-start">
+      <figure class="reveal lg:col-span-4 lg:sticky lg:top-32">
+        <img src="imagens/daisy-conexoes-ancestrais.jpg" alt="Daisy Kosttà Tupinambá com a camiseta da Epohéma, diante da mostra Conexões Ancestrais" class="w-full rounded-2xl border border-ouro/20">
+        <figcaption class="mt-4 text-xs text-juta tracking-wide">Daisy Kosttà Tupinambá na mostra <em>Conexões Ancestrais</em>, no Memorial dos Povos Indígenas.</figcaption>
+      </figure>
 
-      <div class="reveal lg:col-span-7 lg:col-start-6 space-y-8 text-osso/80 text-lg leading-relaxed font-light">
-        <p>
-          Multiartista Tupinambá, Daisy Kosttà apresenta <span class="text-osso font-normal">Epohéma Territórios</span>, uma exposição com 40 obras autorais, sendo 10 criações inéditas inspiradas no Cerrado.
-        </p>
-        <p>
-          Seus cocares originários são construídos com fibras, sementes, vagens, pigmentos e materiais naturais e reciclados. Cada peça estabelece um diálogo entre os territórios amazônicos, o Cerrado e a diversidade dos povos originários.
-        </p>
+      <div class="lg:col-span-7 lg:col-start-6">
+        <p class="reveal label text-ouro mb-4">01 — Sobre a artista</p>
+        <h2 class="reveal font-display font-bold text-5xl lg:text-6xl leading-[1.05] text-osso">Daisy <span class="italic font-semibold text-laranja">Kosttà</span> Tupinambá</h2>
 
-        <blockquote class="relative pl-8 py-4 mt-12 border-l border-terra">
-          <p class="font-display text-3xl md:text-4xl italic leading-snug text-osso">
-            Ancestralidade, memória, resistência e renascimento como matéria de criação.
+        <div class="reveal mt-10 space-y-6 text-osso/80 text-lg leading-relaxed font-light">
+          <p>Multiartista Tupinambá, Daisy Kosttà apresenta <span class="text-osso font-normal">Epohéma Territórios</span>, uma exposição com 40 obras autorais, sendo 10 criações inéditas inspiradas no Cerrado.</p>
+          <p>Seus cocares são construídos com penas, sementes, vagens, fibras, pigmentos e materiais naturais e reciclados. Cada peça estabelece um diálogo entre os territórios amazônicos, o Cerrado e a diversidade dos povos originários.</p>
+        </div>
+
+        <blockquote class="reveal relative mt-12 pl-8 py-4 border-l-2 border-urucum">
+          <p class="font-display text-2xl md:text-3xl italic leading-snug text-osso">
+            "Epohéma Territórios é uma obra-síntese que marca uma nova fase. Em sua forma, evoca o Brasil, reunindo penas nas cores azul, branca, verde e amarela, e a força natural das cascas de vagem e das folhas de carvalho, ipê e magnólia."
           </p>
-          <footer class="mt-4 label text-juta">Epohéma Territórios</footer>
+          <footer class="mt-4 label text-juta">Texto de apresentação da exposição</footer>
         </blockquote>
+
+        <div class="reveal mt-12 p-8 rounded-2xl border border-urucum/40 bg-carvao relative overflow-hidden">
+          <div class="absolute inset-0 grafismo opacity-60"></div>
+          <p class="relative label text-ouro mb-3">Estampa oficial</p>
+          <p class="relative font-display text-3xl md:text-4xl italic text-osso leading-snug">"Nós resistiremos até que verdadeiramente sejamos lembrados!"</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <div class="fio"></div>
+
   <!-- ============ GALERIA ============ -->
-  <section id="galeria" class="relative py-32 lg:py-44 bg-carvao">
-    <div class="absolute inset-0 grafismo opacity-40 pointer-events-none"></div>
+  <section id="galeria" class="relative py-32 lg:py-44 bg-carvao overflow-hidden">
+    <div class="absolute inset-0 grafismo opacity-50 pointer-events-none"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
       <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
         <div>
-          <p class="label text-ocre mb-4">02 — Galeria</p>
-          <h2 class="font-display text-5xl lg:text-7xl text-osso leading-none">Obras</h2>
+          <p class="label text-ouro mb-4">02 — Galeria</p>
+          <h2 class="font-display font-bold text-5xl lg:text-7xl text-osso leading-none">Obras</h2>
         </div>
         <p class="max-w-sm text-osso/60 text-sm leading-relaxed">Selecione uma obra para ampliá-la e conhecer sua técnica e seus materiais.</p>
       </div>
@@ -198,44 +220,51 @@
     </div>
   </section>
 
+  <!-- ============ ABERTURA ============ -->
+  <section class="relative h-[70vh] min-h-[420px] overflow-hidden">
+    <img src="imagens/abertura-publico.jpg" alt="Público na abertura da exposição Epohéma Territórios" class="absolute inset-0 w-full h-full object-cover object-[center_30%]" loading="lazy">
+    <div class="absolute inset-0 bg-gradient-to-t from-noite via-noite/50 to-transparent"></div>
+    <div class="absolute bottom-10 left-0 right-0 max-w-7xl mx-auto px-6 lg:px-10">
+      <p class="label text-ouro mb-3">Abertura · 04 de novembro de 2026</p>
+      <p class="font-display text-3xl md:text-5xl text-osso max-w-2xl leading-tight">Memorial dos Povos Indígenas, Brasília</p>
+    </div>
+  </section>
+
   <!-- ============ ROTEIRO ============ -->
-  <section id="roteiro" class="relative py-32 lg:py-44 border-t border-white/5">
+  <section id="roteiro" class="relative py-32 lg:py-44">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="reveal mb-20 max-w-2xl">
-        <p class="label text-ocre mb-4">03 — Roteiro & Calendário</p>
-        <h2 class="font-display text-5xl lg:text-7xl text-osso leading-none">Circuito Nacional</h2>
+        <p class="label text-ouro mb-4">03 — Roteiro & Calendário</p>
+        <h2 class="font-display font-bold text-5xl lg:text-7xl text-osso leading-none">Circuito Nacional</h2>
       </div>
 
-      <div class="relative grid md:grid-cols-2 gap-8">
-        <!-- Em cartaz -->
-        <article class="reveal relative rounded-2xl overflow-hidden border border-ocre/30 bg-carvao p-10 lg:p-12 min-h-[420px] flex flex-col justify-between">
-          <div class="absolute inset-0 grafismo opacity-30"></div>
-          <div class="relative flex items-center justify-between">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-terra text-osso text-[0.65rem] tracking-[0.2em] uppercase">
-              <span class="w-1.5 h-1.5 rounded-full bg-osso animate-pulse"></span> Atual
-            </span>
-            <span class="text-juta text-xs tracking-[0.15em] uppercase">Brasília — DF</span>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="reveal relative rounded-2xl overflow-hidden border border-ouro/30 bg-carvao grid sm:grid-cols-5">
+          <div class="sm:col-span-2">
+            <img src="imagens/poster-abertura.jpg" alt="Cartaz da exposição Epohéma Territórios, Memorial dos Povos Indígenas, Brasília" class="w-full h-full object-cover" loading="lazy">
           </div>
-          <div class="relative mt-16">
-            <h3 class="font-display text-4xl lg:text-5xl text-osso leading-tight">Memorial dos Povos Indígenas</h3>
-            <p class="mt-5 text-osso/70 leading-relaxed">Abertura em 04 de novembro de 2026, às 20h. Visitação gratuita.</p>
-          </div>
-          <div class="relative mt-10 flex flex-wrap gap-6 text-sm text-juta">
-            <span>Novembro de 2026</span>
-            <span class="text-ocre">Entrada gratuita</span>
+          <div class="sm:col-span-3 p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-urucum text-osso text-[0.65rem] tracking-[0.2em] uppercase">
+                <span class="w-1.5 h-1.5 rounded-full bg-osso animate-pulse"></span> Em cartaz
+              </span>
+              <h3 class="font-display font-bold text-4xl text-osso leading-tight mt-8">Memorial dos Povos Indígenas</h3>
+              <p class="mt-2 text-juta text-xs tracking-[0.15em] uppercase">Brasília — DF</p>
+              <p class="mt-5 text-osso/70 leading-relaxed">Aberta em 04 de novembro de 2026. Visitação gratuita.</p>
+            </div>
+            <p class="mt-8 text-ouro text-xs tracking-[0.15em] uppercase">Entrada gratuita</p>
           </div>
         </article>
 
-        <!-- Próximas -->
         <div class="reveal flex flex-col gap-8">
           <article class="flex-1 rounded-2xl border border-white/10 bg-carvao/60 p-10 flex flex-col justify-center">
             <p class="label text-juta mb-3">Próxima cidade</p>
-            <h3 class="font-display text-3xl text-osso">Em definição</h3>
+            <h3 class="font-display font-bold text-3xl text-osso">Em definição</h3>
             <p class="mt-3 text-osso/60 text-sm">Temporadas em outras capitais e espaços culturais serão anunciadas em breve.</p>
           </article>
-          <article class="flex-1 rounded-2xl border border-dashed border-white/10 p-10 flex flex-col justify-center">
+          <article class="flex-1 rounded-2xl border border-dashed border-white/15 p-10 flex flex-col justify-center">
             <p class="label text-juta mb-3">Temporada futura</p>
-            <h3 class="font-display text-3xl text-osso/70">Em breve</h3>
+            <h3 class="font-display font-bold text-3xl text-osso/70">Em breve</h3>
             <p class="mt-3 text-osso/50 text-sm">Interessado em receber a mostra? Use o formulário de itinerância.</p>
           </article>
         </div>
@@ -243,19 +272,21 @@
     </div>
   </section>
 
+  <div class="faixa"></div>
+
   <!-- ============ APOIE / VOLUNTARIADO ============ -->
-  <section id="apoie" class="relative py-32 lg:py-44 bg-carvao border-t border-white/5">
+  <section id="apoie" class="relative py-32 lg:py-44 bg-carvao">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
       <div class="reveal lg:col-span-5">
-        <p class="label text-ocre mb-4">04 — Engajamento</p>
-        <h2 class="font-display text-5xl lg:text-6xl text-osso leading-[1.05]">Fortaleça o circuito da arte indígena</h2>
+        <p class="label text-ouro mb-4">04 — Engajamento</p>
+        <h2 class="font-display font-bold text-5xl lg:text-6xl text-osso leading-[1.05]">Fortaleça o circuito da arte indígena</h2>
         <p class="mt-8 text-osso/70 leading-relaxed">
           Convidamos pessoas, empresas e veículos de comunicação a somar esforços à circulação independente da arte indígena contemporânea. Seu apoio viabiliza transporte, montagem e acesso gratuito ao público.
         </p>
       </div>
 
       <form id="formApoio" class="reveal lg:col-span-6 lg:col-start-7 space-y-8" novalidate>
-        <p class="label text-terra">Formulário — Voluntariado & Apoio</p>
+        <p class="label text-urucum">Formulário — Voluntariado & Apoio</p>
 
         <div class="grid md:grid-cols-2 gap-8">
           <label class="block"><span class="label">Nome</span><input name="nome" required class="field mt-2" placeholder="Seu nome completo"></label>
@@ -279,26 +310,26 @@
           <textarea name="mensagem" rows="4" class="field mt-2 resize-none" placeholder="Conte como gostaria de colaborar"></textarea>
         </label>
 
-        <button type="submit" class="px-10 py-4 rounded-full bg-mata text-osso text-xs tracking-[0.2em] uppercase border border-ocre/30 hover:bg-terra hover:border-terra transition duration-500">Enviar proposta</button>
-        <p data-feedback class="hidden text-sm text-ocre"></p>
+        <button type="submit" class="px-10 py-4 rounded-full bg-mata text-osso text-xs tracking-[0.2em] uppercase hover:bg-ouro hover:text-noite transition duration-500">Enviar proposta</button>
+        <p data-feedback class="hidden text-sm text-ouro"></p>
       </form>
     </div>
   </section>
 
   <!-- ============ ITINERÂNCIA ============ -->
-  <section id="contrate" class="relative py-32 lg:py-44 border-t border-white/5">
-    <div class="absolute inset-0 grafismo opacity-30 pointer-events-none"></div>
+  <section id="contrate" class="relative py-32 lg:py-44 overflow-hidden">
+    <div class="absolute inset-0 grafismo opacity-40 pointer-events-none"></div>
     <div class="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
       <div class="reveal lg:col-span-5">
-        <p class="label text-ocre mb-4">05 — Itinerância</p>
-        <h2 class="font-display text-5xl lg:text-6xl text-osso leading-[1.05]">Leve a <span class="italic">Epohéma</span> para sua cidade</h2>
+        <p class="label text-ouro mb-4">05 — Itinerância</p>
+        <h2 class="font-display font-bold text-5xl lg:text-6xl text-osso leading-[1.05]">Leve a <span class="italic text-laranja">Epohéma</span> para sua cidade</h2>
         <p class="mt-8 text-osso/70 leading-relaxed">
           Destinado a curadores, galeristas, secretarias de cultura e produtores de eventos. Envie os dados do espaço e o período pretendido para avaliarmos a viabilidade da mostra.
         </p>
       </div>
 
       <form id="formExposicao" class="reveal lg:col-span-6 lg:col-start-7 space-y-8" novalidate>
-        <p class="label text-terra">Formulário — Proposta de Exposição</p>
+        <p class="label text-urucum">Formulário — Proposta de Exposição</p>
 
         <div class="grid md:grid-cols-2 gap-8">
           <label class="block"><span class="label">Nome do responsável</span><input name="responsavel" required class="field mt-2" placeholder="Nome e sobrenome"></label>
@@ -324,65 +355,66 @@
           <textarea name="mensagem" rows="4" class="field mt-2 resize-none" placeholder="Detalhes da proposta, estrutura e expectativas"></textarea>
         </label>
 
-        <button type="submit" class="px-10 py-4 rounded-full bg-terra text-osso text-xs tracking-[0.2em] uppercase hover:bg-ocre hover:text-noite transition duration-500">Solicitar proposta</button>
-        <p data-feedback class="hidden text-sm text-ocre"></p>
+        <button type="submit" class="px-10 py-4 rounded-full bg-urucum text-osso text-xs tracking-[0.2em] uppercase hover:bg-ouro hover:text-noite transition duration-500">Solicitar proposta</button>
+        <p data-feedback class="hidden text-sm text-ouro"></p>
       </form>
     </div>
   </section>
 
   <!-- ============ IMPRENSA ============ -->
-  <section id="imprensa" class="relative py-32 lg:py-44 bg-carvao border-t border-white/5">
+  <section id="imprensa" class="relative py-32 lg:py-44 bg-carvao">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="reveal mb-16 max-w-2xl">
-        <p class="label text-ocre mb-4">06 — Kit Press Online</p>
-        <h2 class="font-display text-5xl lg:text-6xl text-osso leading-none">Imprensa</h2>
+        <p class="label text-ouro mb-4">06 — Kit Press Online</p>
+        <h2 class="font-display font-bold text-5xl lg:text-6xl text-osso leading-none">Imprensa</h2>
       </div>
 
       <div class="reveal grid md:grid-cols-3 gap-6">
-        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ocre/50 transition duration-500">
+        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ouro/60 transition duration-500">
           <p class="label text-juta mb-6">Imagens</p>
-          <h3 class="font-display text-3xl text-osso group-hover:text-ocre transition">Fotos em alta resolução</h3>
+          <h3 class="font-display font-bold text-3xl text-osso group-hover:text-ouro transition">Fotos em alta resolução</h3>
           <p class="mt-4 text-sm text-osso/60">Acervo fotográfico para veiculação, em pacote ZIP.</p>
-          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-terra">Baixar →</span>
+          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-urucum">Baixar →</span>
         </a>
-        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ocre/50 transition duration-500">
+        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ouro/60 transition duration-500">
           <p class="label text-juta mb-6">Texto</p>
-          <h3 class="font-display text-3xl text-osso group-hover:text-ocre transition">Release oficial</h3>
+          <h3 class="font-display font-bold text-3xl text-osso group-hover:text-ouro transition">Release oficial</h3>
           <p class="mt-4 text-sm text-osso/60">Apresentação da exposição, ficha técnica e biografia.</p>
-          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-terra">Baixar PDF →</span>
+          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-urucum">Baixar PDF →</span>
         </a>
-        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ocre/50 transition duration-500">
+        <a href="#" class="group block p-10 rounded-2xl border border-white/10 hover:border-ouro/60 transition duration-500">
           <p class="label text-juta mb-6">Menções</p>
-          <h3 class="font-display text-3xl text-osso group-hover:text-ocre transition">Clipping</h3>
+          <h3 class="font-display font-bold text-3xl text-osso group-hover:text-ouro transition">Clipping</h3>
           <p class="mt-4 text-sm text-osso/60">Matérias e menções publicadas na imprensa.</p>
-          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-terra">Ver clipping →</span>
+          <span class="mt-8 inline-block text-xs tracking-[0.2em] uppercase text-urucum">Ver clipping →</span>
         </a>
       </div>
     </div>
   </section>
 
+  <div class="fio"></div>
+
   <!-- ============ FOOTER ============ -->
-  <footer class="relative border-t border-white/5 pt-24 pb-12">
+  <footer class="relative pt-24 pb-12">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid md:grid-cols-3 gap-12 pb-16 border-b border-white/5">
         <div>
-          <p class="font-display text-3xl tracking-[0.2em] text-osso">EPOHÉMA</p>
-          <p class="text-[0.6rem] tracking-[0.35em] uppercase text-juta mt-2">Daisy Tupinambá</p>
+          <img src="imagens/logo-epohema-territorios.png" alt="Epohéma Territórios" class="w-40 h-auto">
           <p class="mt-6 text-sm text-osso/60 leading-relaxed">Arte, ancestralidade, território e resistência.</p>
         </div>
 
         <div class="space-y-4 text-sm">
           <p class="label text-juta">Contato</p>
-          <p><a href="mailto:contato@epohema-arte.com.br" class="hover:text-ocre transition">contato@epohema-arte.com.br</a></p>
-          <p><a href="tel:+556133440000" class="hover:text-ocre transition">(61) 3344-0000</a></p>
+          <p><a href="mailto:contato@epohema-arte.com.br" class="hover:text-ouro transition">contato@epohema-arte.com.br</a></p>
+          <p><a href="tel:+556133440000" class="hover:text-ouro transition">(61) 3344-0000</a></p>
         </div>
 
         <div class="space-y-4 text-sm">
           <p class="label text-juta">Redes</p>
           <div class="flex gap-6">
-            <a href="#" class="hover:text-ocre transition">Instagram</a>
-            <a href="#" class="hover:text-ocre transition">YouTube</a>
-            <a href="#" class="hover:text-ocre transition">LinkedIn</a>
+            <a href="#" class="hover:text-ouro transition">Instagram</a>
+            <a href="#" class="hover:text-ouro transition">YouTube</a>
+            <a href="#" class="hover:text-ouro transition">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -395,36 +427,35 @@
   </footer>
 
   <!-- ============ LIGHTBOX ============ -->
-  <div id="lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-noite/90 backdrop-blur-md p-6" role="dialog" aria-modal="true" aria-label="Visualização da obra">
-    <button id="lbClose" aria-label="Fechar" class="absolute top-6 right-6 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ocre hover:text-ocre transition">✕</button>
-    <button id="lbPrev" aria-label="Anterior" class="absolute left-4 lg:left-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ocre hover:text-ocre transition">←</button>
-    <button id="lbNext" aria-label="Próxima" class="absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ocre hover:text-ocre transition">→</button>
+  <div id="lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center bg-noite/95 backdrop-blur-md p-6" role="dialog" aria-modal="true" aria-label="Visualização da obra">
+    <button id="lbClose" aria-label="Fechar" class="absolute top-6 right-6 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ouro hover:text-ouro transition">✕</button>
+    <button id="lbPrev" aria-label="Anterior" class="absolute left-4 lg:left-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ouro hover:text-ouro transition">←</button>
+    <button id="lbNext" aria-label="Próxima" class="absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-osso/20 text-osso hover:border-ouro hover:text-ouro transition">→</button>
 
     <figure class="max-w-5xl w-full grid lg:grid-cols-12 gap-8 items-center">
-      <div id="lbMedia" class="lg:col-span-8 aspect-[4/5] lg:aspect-[4/3] rounded-xl overflow-hidden placeholder-img flex items-center justify-center"></div>
+      <div class="lg:col-span-8 flex justify-center">
+        <img id="lbImg" src="" alt="" class="max-h-[78vh] w-auto rounded-xl">
+      </div>
       <figcaption class="lg:col-span-4 space-y-4">
-        <p id="lbIndex" class="label text-ocre"></p>
-        <h3 id="lbTitulo" class="font-display text-4xl text-osso leading-tight"></h3>
+        <p id="lbIndex" class="label text-ouro"></p>
+        <h3 id="lbTitulo" class="font-display font-bold text-4xl text-osso leading-tight"></h3>
         <p id="lbTecnica" class="text-sm text-osso/70 leading-relaxed"></p>
         <p id="lbAno" class="text-sm text-juta"></p>
       </figcaption>
     </figure>
   </div>
 
-  <!-- Cursor -->
-  <div class="cursor-dot" id="cursorDot"></div>
-
   <script>
-    /* ---------- Ano automático no rodapé ---------- */
+    /* ---------- Ano automático ---------- */
     document.getElementById('ano').textContent = new Date().getFullYear();
 
     /* ---------- Header ao rolar ---------- */
     const header = document.getElementById('header');
     const onScroll = () => {
-      header.classList.toggle('bg-noite/80', window.scrollY > 40);
-      header.classList.toggle('backdrop-blur-md', window.scrollY > 40);
-      header.classList.toggle('border-b', window.scrollY > 40);
-      header.classList.toggle('border-white/5', window.scrollY > 40);
+      const on = window.scrollY > 40;
+      header.classList.toggle('glass', on);
+      header.classList.toggle('border-b', on);
+      header.classList.toggle('border-white/5', on);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -443,40 +474,16 @@
       })
     );
 
-    /* ---------- Cocar (arco de penas) gerado em SVG ---------- */
-    (function buildCocar() {
-      const svg = document.getElementById('cocar');
-      const ns = 'http://www.w3.org/2000/svg';
-      const cx = 200, cy = 330, colors = ['#C9A24B', '#C4572E', '#EDE6D8', '#1F3B2D', '#CDBB98'];
-      for (let i = 0; i <= 28; i++) {
-        const angle = (-90 + (i * 180) / 28) * Math.PI / 180;
-        const len = 150 + Math.sin(i / 28 * Math.PI) * 40;
-        const x2 = cx + Math.cos(angle) * len;
-        const y2 = cy + Math.sin(angle) * len;
-        const line = document.createElementNS(ns, 'line');
-        line.setAttribute('x1', cx); line.setAttribute('y1', cy);
-        line.setAttribute('x2', x2.toFixed(1)); line.setAttribute('y2', y2.toFixed(1));
-        line.setAttribute('stroke', colors[i % colors.length]);
-        line.setAttribute('stroke-width', i % 3 === 0 ? 1.4 : 0.6);
-        line.setAttribute('stroke-linecap', 'round');
-        svg.appendChild(line);
-      }
-      const arc = document.createElementNS(ns, 'path');
-      arc.setAttribute('d', 'M 120 330 Q 200 230 280 330');
-      arc.setAttribute('fill', 'none');
-      arc.setAttribute('stroke', '#C9A24B');
-      arc.setAttribute('stroke-width', '1');
-      svg.appendChild(arc);
-    })();
-
-    /* ---------- Galeria: edite aqui para inserir imagens ---------- */
+    /* ---------- Obras (edite aqui para título, técnica e ano) ---------- */
     const obras = [
-      { titulo: 'Epohéma Territórios', tecnica: 'Penas, cascas de vagem, folhas de carvalho, ipê e magnólia sobre juta', ano: '2026', src: null, ratio: 'aspect-[4/5]' },
-      { titulo: 'Sol do Cerrado', tecnica: 'Penas tingidas, fibras e sementes do Cerrado', ano: '2026', src: null, ratio: 'aspect-square' },
-      { titulo: 'Epohéma Renascimento', tecnica: 'Penas coloridas, sementes e fibras naturais', ano: '2026', src: null, ratio: 'aspect-[3/4]' },
-      { titulo: 'Epohéma Rebirth', tecnica: 'Penas, fibras e sementes naturais', ano: '2026', src: null, ratio: 'aspect-[4/5]' },
-      { titulo: 'Obra 05', tecnica: 'Técnica a definir', ano: '2026', src: null, ratio: 'aspect-square' },
-      { titulo: 'Obra 06', tecnica: 'Técnica a definir', ano: '2026', src: null, ratio: 'aspect-[3/4]' },
+      { titulo: 'Epohéma Territórios', tecnica: 'Penas, cascas de vagem, folhas de carvalho, ipê e magnólia sobre juta', ano: '2026', src: 'imagens/obra-territorios.jpg' },
+      { titulo: 'Sol do Cerrado', tecnica: 'Penas tingidas, fibras e sementes do Cerrado sobre juta', ano: '2026', src: 'imagens/obra-sol-do-cerrado.jpg' },
+      { titulo: 'Epohéma Renascimento', tecnica: 'Penas coloridas, sementes e fibras naturais', ano: '2026', src: 'imagens/obra-renascimento.jpg' },
+      { titulo: 'Obra 04', tecnica: 'Penas tingidas e fibras naturais sobre juta', ano: '2026', src: 'imagens/obra-04.jpg' },
+      { titulo: 'Obra 05', tecnica: 'Penas, sementes e fibras naturais', ano: '2026', src: 'imagens/obra-05.jpg' },
+      { titulo: 'Obra 06', tecnica: 'Penas, sementes e vagens sobre juta', ano: '2026', src: 'imagens/obra-06.jpg' },
+      { titulo: 'Obra 07', tecnica: 'Penas tingidas, sementes e fibras naturais', ano: '2026', src: 'imagens/obra-07.jpg' },
+      { titulo: 'Obra 08', tecnica: 'Penas coloridas, sementes e folhas naturais', ano: '2026', src: 'imagens/obra-08.jpg' },
     ];
 
     const grid = document.getElementById('grid');
@@ -486,14 +493,13 @@
       card.className = 'reveal group block w-full mb-6 break-inside-avoid text-left';
       card.setAttribute('aria-label', `Ampliar ${obra.titulo}`);
       card.innerHTML = `
-        <div class="relative ${obra.ratio} rounded-xl overflow-hidden placeholder-img">
-          ${obra.src ? `<img src="${obra.src}" alt="${obra.titulo}" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-105">` : ''}
-          <div class="absolute inset-0 grafismo opacity-30"></div>
-          <div class="absolute inset-0 bg-noite/0 group-hover:bg-noite/40 transition duration-500"></div>
-          <span class="absolute bottom-4 left-4 text-[0.6rem] tracking-[0.3em] uppercase text-juta/80">${String(i + 1).padStart(2, '0')}</span>
+        <div class="relative rounded-xl overflow-hidden border border-white/5">
+          <img src="${obra.src}" alt="${obra.titulo}, ${obra.tecnica}" loading="lazy" class="w-full h-auto transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-noite/0 group-hover:bg-noite/30 transition duration-500"></div>
+          <span class="absolute bottom-4 left-4 text-[0.6rem] tracking-[0.3em] uppercase text-osso/90">${String(i + 1).padStart(2, '0')}</span>
         </div>
         <div class="pt-4">
-          <h3 class="font-display text-2xl text-osso group-hover:text-ocre transition">${obra.titulo}</h3>
+          <h3 class="font-display font-bold text-2xl text-osso group-hover:text-ouro transition">${obra.titulo}</h3>
           <p class="text-xs text-osso/50 mt-1">${obra.tecnica} · ${obra.ano}</p>
         </div>`;
       card.addEventListener('click', () => openLightbox(i));
@@ -506,10 +512,9 @@
 
     function renderLightbox() {
       const obra = obras[current];
-      const media = document.getElementById('lbMedia');
-      media.innerHTML = obra.src
-        ? `<img src="${obra.src}" alt="${obra.titulo}" class="w-full h-full object-cover">`
-        : `<div class="grafismo absolute inset-0 opacity-30"></div><span class="relative text-[0.65rem] tracking-[0.3em] uppercase text-juta/70">Imagem a anexar</span>`;
+      const img = document.getElementById('lbImg');
+      img.src = obra.src;
+      img.alt = obra.titulo;
       document.getElementById('lbIndex').textContent = `Obra ${String(current + 1).padStart(2, '0')} / ${String(obras.length).padStart(2, '0')}`;
       document.getElementById('lbTitulo').textContent = obra.titulo;
       document.getElementById('lbTecnica').textContent = obra.tecnica;
@@ -551,20 +556,20 @@
 
         required.forEach(field => {
           const ok = field.value.trim() !== '' && (field.type !== 'email' || /^\S+@\S+\.\S+$/.test(field.value));
-          field.style.borderColor = ok ? '' : '#C4572E';
+          field.style.borderColor = ok ? '' : '#D9372B';
           if (!ok) valid = false;
         });
 
         feedback.classList.remove('hidden');
         if (!valid) {
           feedback.textContent = 'Preencha os campos obrigatórios com dados válidos.';
-          feedback.className = 'text-sm text-terra';
+          feedback.className = 'text-sm text-urucum';
           return;
         }
 
         /* Integração: substitua este bloco por fetch() para seu endpoint (Formspree, Apps Script, API própria) */
         feedback.textContent = 'Obrigado. Recebemos sua mensagem e retornaremos em breve.';
-        feedback.className = 'text-sm text-ocre';
+        feedback.className = 'text-sm text-ouro';
         form.reset();
       });
     }
@@ -581,19 +586,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    /* ---------- Cursor personalizado (apenas desktop) ---------- */
-    const dot = document.getElementById('cursorDot');
-    if (window.matchMedia('(hover: hover)').matches) {
-      document.addEventListener('mousemove', e => {
-        dot.style.left = e.clientX + 'px';
-        dot.style.top = e.clientY + 'px';
-      });
-      document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-        el.addEventListener('mouseenter', () => dot.classList.add('is-hover'));
-        el.addEventListener('mouseleave', () => dot.classList.remove('is-hover'));
-      });
-    }
   </script>
 </body>
 </html>
