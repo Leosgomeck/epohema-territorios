@@ -6,7 +6,7 @@
   <title>Epohéma Territórios | Daisy Kosttà Tupinambá</title>
   <meta name="description" content="Epohéma Territórios: arte plumária Tupinambá contemporânea de Daisy Kosttà. Ancestralidade, memória, resistência e renascimento.">
   <meta property="og:title" content="Epohéma Territórios | Daisy Kosttà Tupinambá">
-  <meta property="og:image" content="imagens/banner-epohema.jpg">
+  <meta property="og:image" content="imagens/banner-epohema-v2.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,15 @@
     /* Molduras e tratamento das imagens */
     .moldura { padding: 10px; background: #161412; box-shadow: inset 0 0 0 1px rgba(231,181,58,.35), 0 30px 60px -20px rgba(0,0,0,.7); }
     .obra-img { filter: contrast(1.04) saturate(.95) brightness(1.04); }
+
+    /* Moldura de natureza morta: fio dourado, penas e sementes nos cantos */
+    .moldura-natureza { position: relative; padding: 14px; background: #161412; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
+    .moldura-natureza::after { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(231,181,58,.35); border-radius: 18px; pointer-events: none; }
+    .ornato { position: absolute; width: 92px; height: 92px; pointer-events: none; z-index: 2; }
+    .t-l { top: -22px; left: -22px; }
+    .t-r { top: -22px; right: -22px; transform: scaleX(-1); }
+    .b-l { bottom: -22px; left: -22px; transform: scaleY(-1); }
+    .b-r { bottom: -22px; right: -22px; transform: scale(-1); }
 
     /* Movimento: marquee */
     @keyframes faixa { to { transform: translateX(-50%); } }
@@ -95,6 +104,9 @@
 
 <body class="font-sans antialiased">
 
+  <!-- Ornato de natureza morta: fio dourado, penas e sementes -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="ornato" viewBox="0 0 80 80"><path d="M3 46 Q3 3 46 3" fill="none" stroke="#E7B53A" stroke-width="1.4" stroke-linecap="round"/><path d="M3 30 Q8 17 22 9" fill="none" stroke="#E7B53A" stroke-opacity=".5" stroke-width=".8"/><g transform="translate(10 26) rotate(-62)"><path d="M0 0 Q8 -6 20 0 Q8 6 0 0Z" fill="#D9372B"/></g><g transform="translate(24 10) rotate(-24)"><path d="M0 0 Q8 -6 20 0 Q8 6 0 0Z" fill="#EE7A1B"/></g><g transform="translate(6 46) rotate(-86)"><path d="M0 0 Q7 -5 17 0 Q7 5 0 0Z" fill="#1F7A4A"/></g><g transform="translate(40 8) rotate(-6)"><path d="M0 0 Q6 -4 15 0 Q6 4 0 0Z" fill="#2456D6"/></g><g transform="translate(45 18) rotate(-4)"><path d="M0 0 Q6 -4 14 0 Q6 4 0 0Z" fill="#E9587F"/></g><circle cx="20" cy="52" r="2" fill="#E7B53A"/><circle cx="36" cy="38" r="1.6" fill="#CDBB98"/><circle cx="52" cy="26" r="2.2" fill="#E7B53A"/></symbol></defs></svg>
+
   <!-- ============ HEADER ============ -->
   <header id="header" class="fixed top-0 inset-x-0 z-50 transition-colors duration-500">
     <nav class="max-w-7xl mx-auto px-5 lg:px-10 h-16 flex items-center justify-between">
@@ -133,7 +145,7 @@
 
     <div class="relative z-10 h-full max-w-7xl mx-auto px-5 lg:px-10 flex flex-col justify-end pt-28 pb-28 lg:pb-32">
             <h1 class="sr-only">Epohéma Territórios</h1>
-      <img src="imagens/banner-epohema.jpg" alt="Epohéma Territórios, Daisy Tupinambá" class="sobe block w-full max-w-[960px] h-auto" style="filter:brightness(1.12);animation-delay:.1s;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%),linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%),linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);mask-composite:intersect">
+      <img src="imagens/banner-epohema-v2.jpg" alt="Epohéma Territórios, Daisy Tupinambá" class="sobe block w-full max-w-[960px] h-auto" style="animation-delay:.1s;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%),linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 78%,transparent 100%),linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);mask-composite:intersect">
       <p class="mt-3 font-display font-bold text-xl sm:text-2xl text-ouro">Daisy Kosttà Tupinambá</p>
       <p class="mt-6 max-w-md text-osso/85 text-base sm:text-lg leading-relaxed">
         Quarenta obras de arte plumária Tupinambá. Dez são inéditas e nasceram do Cerrado.
@@ -188,7 +200,7 @@
           </button>
         </div>
       </div>
-      <div id="trilho" class="carrossel-track flex gap-5 overflow-x-auto pb-4"></div>
+      <div id="trilho" class="carrossel-track flex gap-5 overflow-x-auto pt-6 pb-8 px-3"></div>
     </div>
   </section>
 
@@ -390,7 +402,7 @@
       card.className = 'carrossel-item group shrink-0 w-[78vw] sm:w-[44vw] lg:w-[30vw] text-left';
       card.setAttribute('aria-label', `Ampliar ${o.titulo}`);
       card.innerHTML = `
-        <div class="moldura rounded-3xl"><div class="relative aspect-[4/5] rounded-2xl overflow-hidden">
+        <div class="moldura-natureza"><svg class="ornato t-l" viewBox="0 0 80 80" aria-hidden="true"><use href="#ornato"/></svg><svg class="ornato t-r" viewBox="0 0 80 80" aria-hidden="true"><use href="#ornato"/></svg><svg class="ornato b-l" viewBox="0 0 80 80" aria-hidden="true"><use href="#ornato"/></svg><svg class="ornato b-r" viewBox="0 0 80 80" aria-hidden="true"><use href="#ornato"/></svg><div class="relative aspect-[4/5] rounded-2xl overflow-hidden">
           <img src="${o.src}" alt="${o.titulo}" loading="lazy" class="w-full h-full object-cover obra-img transition duration-700 group-hover:scale-105">
           <span class="absolute top-4 left-4 w-9 h-9 rounded-full grid place-items-center text-noite text-xs font-black" style="background:${cores[i]}">${i + 1}</span>
         </div></div>
